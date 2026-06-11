@@ -1,0 +1,12 @@
+{
+  "domain": "metclouds",
+  "name": "MET Cloud Layers",
+  "codeowners": ["@lordblc"],
+  "config_flow": true,
+  "documentation": "https://github.com/lordblc/ha-metclouds",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/lordblc/ha-metclouds/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

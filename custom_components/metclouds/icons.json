@@ -1,0 +1,17 @@
+{
+  "entity": {
+    "sensor": {
+      "cloud_total": { "default": "mdi:cloud-percent" },
+      "cloud_low": { "default": "mdi:weather-cloudy" },
+      "cloud_medium": { "default": "mdi:weather-partly-cloudy" },
+      "cloud_high": { "default": "mdi:weather-windy" },
+      "fog": { "default": "mdi:weather-fog" },
+      "transmittance_now": { "default": "mdi:sun-wireless" },
+      "cloud_low_next_3h": { "default": "mdi:weather-cloudy-clock" },
+      "transmittance_next_3h": { "default": "mdi:sun-wireless-outline" },
+      "sky_quality_today_remaining": { "default": "mdi:weather-sunny-alert" },
+      "sky_quality_tomorrow": { "default": "mdi:weather-sunset-up" },
+      "forecast_updated": { "default": "mdi:update" }
+    }
+  }
+}

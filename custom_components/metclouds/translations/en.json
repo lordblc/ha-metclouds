@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MET Cloud Layers",
+        "description": "Layered cloud-cover forecasts (low/mid/high) from MET Norway's free Locationforecast API. No API key needed.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "altitude": "Altitude (m)"
+        },
+        "data_description": {
+          "latitude": "Defaults to your Home Assistant location. Sent with 4 decimals (MET requirement).",
+          "longitude": "Defaults to your Home Assistant location. Sent with 4 decimals (MET requirement).",
+          "altitude": "Site elevation in metres; improves the forecast slightly."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the MET API."
+    },
+    "abort": {
+      "already_configured": "This location is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "MET Cloud Layers options",
+        "description": "The weights set how much a full cover of each cloud layer attenuates solar irradiance in the transmittance/sky-quality sensors (0 = ignores the layer, 1 = blocks everything).",
+        "data": {
+          "update_interval_minutes": "Update interval (minutes)",
+          "weight_low": "Low-cloud attenuation weight",
+          "weight_medium": "Mid-cloud attenuation weight",
+          "weight_high": "High-cloud attenuation weight",
+          "weight_fog": "Fog attenuation weight"
+        },
+        "data_description": {
+          "update_interval_minutes": "MET refreshes the data roughly every 30 minutes; polling faster only yields cached answers."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "cloud_total": { "name": "Cloud cover" },
+      "cloud_low": { "name": "Low clouds" },
+      "cloud_medium": { "name": "Mid clouds" },
+      "cloud_high": { "name": "High clouds" },
+      "fog": { "name": "Fog" },
+      "transmittance_now": { "name": "Sky transmittance" },
+      "cloud_low_next_3h": { "name": "Low clouds next 3 h" },
+      "transmittance_next_3h": { "name": "Sky transmittance next 3 h" },
+      "sky_quality_today_remaining": { "name": "Sky quality today remaining" },
+      "sky_quality_tomorrow": { "name": "Sky quality tomorrow" },
+      "forecast_updated": { "name": "Forecast updated" }
+    }
+  }
+}

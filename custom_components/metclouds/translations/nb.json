@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MET Cloud Layers",
+        "description": "Lagdelt skydekke-varsel (lave/mellomhøye/høye skyer) fra MET sitt gratis Locationforecast-API. Ingen API-nøkkel nødvendig.",
+        "data": {
+          "latitude": "Breddegrad",
+          "longitude": "Lengdegrad",
+          "altitude": "Høyde over havet (m)"
+        },
+        "data_description": {
+          "latitude": "Bruker Home Assistant-posisjonen som standard. Sendes med 4 desimaler (MET-krav).",
+          "longitude": "Bruker Home Assistant-posisjonen som standard. Sendes med 4 desimaler (MET-krav).",
+          "altitude": "Høyde over havet i meter; gir et litt bedre varsel."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Fikk ikke kontakt med MET-API-et."
+    },
+    "abort": {
+      "already_configured": "Denne posisjonen er allerede konfigurert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Innstillinger for MET Cloud Layers",
+        "description": "Vektene angir hvor mye et heldekkende lag av hver skytype demper solinnstrålingen i transmisjons-/himmelkvalitet-sensorene (0 = ignorer laget, 1 = blokkerer alt).",
+        "data": {
+          "update_interval_minutes": "Oppdateringsintervall (minutter)",
+          "weight_low": "Dempingsvekt lave skyer",
+          "weight_medium": "Dempingsvekt mellomhøye skyer",
+          "weight_high": "Dempingsvekt høye skyer",
+          "weight_fog": "Dempingsvekt tåke"
+        },
+        "data_description": {
+          "update_interval_minutes": "MET oppdaterer dataene omtrent hvert 30. minutt; hyppigere spørringer gir bare mellomlagrede svar."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "cloud_total": { "name": "Skydekke" },
+      "cloud_low": { "name": "Lave skyer" },
+      "cloud_medium": { "name": "Mellomhøye skyer" },
+      "cloud_high": { "name": "Høye skyer" },
+      "fog": { "name": "Tåke" },
+      "transmittance_now": { "name": "Himmeltransmisjon" },
+      "cloud_low_next_3h": { "name": "Lave skyer neste 3 t" },
+      "transmittance_next_3h": { "name": "Himmeltransmisjon neste 3 t" },
+      "sky_quality_today_remaining": { "name": "Himmelkvalitet resten av dagen" },
+      "sky_quality_tomorrow": { "name": "Himmelkvalitet i morgen" },
+      "forecast_updated": { "name": "Varsel oppdatert" }
+    }
+  }
+}
